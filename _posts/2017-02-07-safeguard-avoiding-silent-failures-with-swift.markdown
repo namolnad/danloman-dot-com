@@ -2,7 +2,7 @@
 layout: post
 title:  "Safeguard: Avoiding 🙉 Silent Failures with Swift"
 date:   2017-02-07
-categories: swift guard logging
+categories: swift ios logging
 ---
 Instacart ❤️’s Swift.
 
