@@ -2,7 +2,7 @@
 layout: post
 title:  "Introducing Finch 🐦 — A conventional-commit powered changelog generator"
 date:   2019-08-09
-categories: swift tooling changelog
+tags: swift tooling changelog
 ---
 
 Hello, World! Meet [Finch][repo], a configurable commandline tool, built in Swift, designed to easily create and format changelogs. Finch, meet the World. 🤝
