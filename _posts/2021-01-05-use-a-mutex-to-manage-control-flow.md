@@ -133,7 +133,7 @@ class MyViewController: UIViewController {
 
 This will prevent further loads if the `stateMutex` indicates that it is either currently loading or has already been loaded. Pretty cool!
 
-Alright, I'll wrap it up here and leave it to you to see how else you can leverage this simple Mutex type. I hope you find this idea useful and that it inspires you to clean up your codebase just a little bit so you can start 2021 off on the right foot.
+Alright, I'll wrap it up here and leave it to you to see how else you can leverage this simple Mutex type. If you find this idea useful or have thoughts on improving the approach, please reach out to me on [Twitter](https://twitter.com/namolnad). I hope that this inspires you to clean up your codebase just a little bit so you can start 2021 off on the right foot.
 
 Happy coding!
 
