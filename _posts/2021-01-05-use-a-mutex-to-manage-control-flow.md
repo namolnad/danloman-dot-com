@@ -118,7 +118,7 @@ class MyViewController: UIViewController {
     private var stateMutex = Mutex<State>()
 
     func load() {
-        guard stateMutex.claim(for: .loading), stateMutex.unless(.loaded) else { return }
+        guard stateMutex.claim(for: .loading), stateMutex.isUnclaimed(for: .loaded) else { return }
 
         model
             .fetch()
