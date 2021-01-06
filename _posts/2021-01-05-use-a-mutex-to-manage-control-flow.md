@@ -94,7 +94,7 @@ extension Mutex where Value: OptionSet {
         return !value.contains(option)
     }
 
-    public func unless(_ option: Value.Element) -> Bool {
+    public func isUnclaimed(for option: Value.Element) -> Bool {
         !value.contains(option)
     }
 
