@@ -1,8 +1,7 @@
 ---
 layout: post
-title: 'Use a Mutex to manage control flow'
+title: Use a Mutex to manage control flow
 ---
-
 _As a primer for this post I should mention that the Mutex type I describe here is not related to thread locks/mutexes and I'm not suggesting reusing/abusing any existing types like `NSLock` in a different context. I mean only that we can reuse the **concept** of a Mutex for more simply managing control flow. Ok, now on to the post..._
 
 Happy New Year! I hope this finds you all settling back into work, a couple of pounds heavier, and all the more jolly for it after a nice 2020 holiday season. Further, I hope you're all rested and ready to turn your minds back toward coding (and control flow in particular...)
