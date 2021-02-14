@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Use a Gatekeeper to manage control flow
-date: 2021-02-13 21:12 -0700
 ---
 A control-flow technique which many of you are likely familiar with goes something like this:
 
@@ -24,7 +23,7 @@ class MyViewController: UIViewController {
 }
 ```
 
-This methodology—one I've used many times—is plenty effective, but has always felt a bit cumbersome and potentially error prone as there are several areas where you need to toggle the `isLoading` boolean and thusly there are several opportunities to forget to do so. I've long been considering a `propertyWrapper` to encapsulate and streamline this logic, but I struggled to come up with naming and ergonomics which felt like an improvement over the existing solution.
+This methodology—one I've used many times—is plenty effective, but has always felt slightly cumbersome and potentially error prone as there are several areas where you need to toggle the `isLoading` boolean and—as such—there are several opportunities to forget to do so. I've long been considering a `propertyWrapper` to encapsulate and streamline this logic, but I struggled to come up with naming and ergonomics which felt like an improvement over the existing solution.
 
 After a bit of brainstorming, I initially wanted to relate this concept to a mutex. However with the help of a colleague, I decided that overloading the mutex name wasn't the right decision. Following some further ideation, I came upon the `Gatekeeper` concept. Essentially, we can imagine there is a human gatekeeper who only allows passage if you haven't already entered, and with whom we must check if we are able to "pass". After toying around with this a bit, I decided there wasn't a need for a propertyWrapper and that a simple struct should suffice.
 
@@ -77,7 +76,7 @@ extension Gatekeeper where Value == Bool {
 }
 ```
 
-The boolean extension alone covers off on the majority of simple cases—like the example above—however we can easily add another extension to enable this to work for a much more complex bit of state management.
+The boolean extension above covers the majority of simple cases, however, we can easily add another extension to enable this to work for a much more complex bit of state management.
 
 ``` swift
 extension Gatekeeper where Value: SetAlgebra {
@@ -129,6 +128,20 @@ class MyViewController: UIViewController {
 ```
 
 This will prevent further loads if the `stateGatekeeper` indicates that it is either currently loading or has already been loaded. Pretty cool!
+
+As a final example, if you had a requirement to track each time an element was viewed on screen, but you wanted to ensure duplicate views were not recorded, you could use this type to ensure you track each element only a single time.
+
+``` swift
+class MyViewController: UIViewController {
+    private var trackingGatekeeper = Gatekeeper<Set<String>>()
+
+    func didView(elementIds: [String]) {
+        for id in elementIds where trackingGatekeeper.attemptPassage(for: id) {
+            trackView(for: id)
+        }
+    }
+}
+```
 
 Alright, I'll wrap it up here and leave it to you to see how else you can leverage this simple `Gatekeeper` type. If you find this idea useful or have thoughts on improving the approach, please reach out to me on [Twitter](https://twitter.com/namolnad). I hope that this inspires you to clean up your codebase just a little bit.
 
