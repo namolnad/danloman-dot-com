@@ -26,7 +26,7 @@ class MyViewController: UIViewController {
 
 This methodology—one I've used many times—is plenty effective, but has always felt a bit cumbersome and potentially error prone as there are several areas where you need to toggle the `isLoading` boolean and thusly there are several opportunities to forget to do so. I've long been considering a `propertyWrapper` to encapsulate and streamline this logic, but I struggled to come up with naming and ergonomics which felt like an improvement over the existing solution.
 
-After a bit of brainstorming, I initially wanted to relate this concept to a mutex, however with the help of some colleagues I decided that overloading the mutex name wasn't the right decision. Following some further ideation, I came upon the `Gatekeeper` concept. Essentially, we can imagine there is a human gatekeeper who only allows passage if you haven't already entered, and with whom we must check if we are able to "pass". After toying around with this a bit, I decided there wasn't a need for a propertyWrapper and that a simple struct should suffice.
+After a bit of brainstorming, I initially wanted to relate this concept to a mutex. However with the help of a colleague, I decided that overloading the mutex name wasn't the right decision. Following some further ideation, I came upon the `Gatekeeper` concept. Essentially, we can imagine there is a human gatekeeper who only allows passage if you haven't already entered, and with whom we must check if we are able to "pass". After toying around with this a bit, I decided there wasn't a need for a propertyWrapper and that a simple struct should suffice.
 
 Here is a simple example of such a type in action:
 
