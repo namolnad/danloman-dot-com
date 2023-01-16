@@ -4,23 +4,27 @@ title: Introducing jt. A JSON trimmer.
 date: 2023-01-15
 ---
 
-Today I'd like to introduce you to `jt` — a small command-line tool that allows you to take a JSON blob as input and return a subset of that JSON blob based on a simple schema argument. For example:
+Today I'd like to introduce you to `jt` — a small command-line tool that allows you to take a JSON blob as input and return a subset of that JSON blob based on a simple schema argument.
+
+## Neat. Show me.
+
+Ok. Here's an example:
 
 > ``` js
-// example.json
 {"body":{"key1":[1,2,3],"key2":{"key3":3,"key5":"string"},"key4":"value","key5":[]}}
 ```
-Given the above file, we can run this simple command:
+Given the above file, `example.json`, we can run this simple command:
 ``` bash
 cat example.json | jt '{body{key1,key2{key3},key4}}'
 ```
-This will produce the following output:
-``` js
+This will produce the following trimmed output:
+> ``` js
 {"body":{"key1":[1,2,3],"key2":{"key3":3},"key4":"value"}}
 ```
-> `jt` will take the JSON input and transform it based on the schema provided, outputting only the selected keys and values.
 
-## So… Why jt?
+As mentioned above, `jt` will take the JSON input and transform it based on the schema provided, outputting only the selected keys and values.
+
+## Ok… But why jt?
 
 JSON responses from REST endpoints often become bloated over time, and in many cases, mobile clients only need a small portion of the response — a response which may have been originally intended for a desktop interface. `jt` was created to address this issue by allowing clients to select only the portion of a network response that they need. This has the benefit of reducing the amount of data sent over the wire.
 
