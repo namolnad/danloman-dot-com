@@ -4,7 +4,7 @@ title: Introducing jt. A JSON trimmer.
 date: 2023-01-15
 ---
 
-Today I'd like to introduce you to `jt` — a small command-line tool that allows you to take a JSON blob as input and return a subset of that JSON blob based on a simple schema argument.
+Today I'd like to [introduce you to jt](https://github.com/namolnad/jt) — a small command-line tool that allows you to take a JSON blob as input and return a subset of that JSON blob based on a simple schema argument.
 
 ## Neat. Show me.
 
@@ -32,4 +32,4 @@ While GraphQL is a powerful tool that can also accomplish this, this is not its 
 
 `jt` is designed to be a simpler, targeted tool for trimming JSON responses. The client can send a schema for a given request as a custom header, or this data can be persisted server-side and versioned alongside client updates. While similar json manipulation tools, such as jq, exist, `jt` is specifically designed for deep, nested filtering.
 
-Please note that `jt` is a new tool and may overlook many complexities, corner cases, and perhaps even support of the full JSON spec. That said, I'd love for you to try the tool and share your thoughts and suggestions for improvements.
+Please note that `jt` is a new tool and may overlook many complexities, corner cases, and perhaps even support of the full JSON spec. That said, I'd love for you to try `jt` and share your thoughts and suggestions for improvements. You can check it out at [https://github.com/namolnad/jt](https://github.com/namolnad/jt). Feel free to share feedback with me using any of the methods shown at the bottom of this page — looking forward to hearing from you!

@@ -6,6 +6,10 @@ permalink: /open-source/
 #### A short collection of featured open source work
 
 ---
+### [jt - a JSON trimmer][jt]
+Command-line tool for trimming JSON responses to a subset of the original response
+
+---
 ### [Ahoy iOS][ahoy-ios]
 Client library enabling first-party analytics for Apple platforms
 
@@ -25,6 +29,7 @@ A thin wrapper around Apple's UIAccessibility framework
 ### [Display Arranger][display-arranger]
 Command-line application for Mac to make arranging your external displays a bit simpler
 
+[jt]: https://github.com/namolnad/jt
 [ahoy-ios]: https://github.com/namolnad/ahoy-ios
 [finch]: https://github.com/namolnad/finch
 [safeguard]: https://github.com/namolnad/safeguard
