@@ -1,7 +1,5 @@
 ---
-layout: page
-title: Alpin
-permalink: /alpin/index.html
+layout: alpin_page
+title: Coming soon!
 ---
 
-Coming soon!

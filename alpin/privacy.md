@@ -1,7 +1,6 @@
 ---
-layout: page
-title: Alpin - Privacy Policy
-permalink: /alpin/privacy.html
+layout: alpin_page
+title: Privacy Policy
 ---
 
 _Last updated March 2018_

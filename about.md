@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-permalink: /about.html
+permalink: /about/
 ---
 
 I am a senior engineer and a Swift expert who brings a user-centric mindset — ensuring the business succeeds because of its focus on doing what is right for the user. I have a knack for creating tools which accelerate productivity for the entire team. I am a believer in clean coding practices and utilize a combination of tooling and vigilance to ensure complexity does not build up in the system over time.
