@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Privacy Policy
+title: Alpin - Privacy Policy
 permalink: /alpin/privacy.html
 ---
 
