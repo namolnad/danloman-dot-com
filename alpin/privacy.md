@@ -1,6 +1,7 @@
 ---
-layout: alpin_page
+layout: page
 title: Privacy Policy
+category: alpin
 ---
 
 _Last updated March 2018_

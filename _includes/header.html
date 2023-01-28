@@ -1,11 +1,21 @@
 <header class="site-header">
 
   <div class="wrapper">
-    {%- assign filtered_pages = site.pages | where:"layout","alpin_page" -%}
+    {%- assign is_alpin = page.category == "alpin" -%}
+    {% if is_alpin %}
+      {%- assign filtered_pages = site.pages | where:"category","alpin" -%}
+    {% else %}
+      {%- assign filtered_pages = site.pages | where_exp:"item", "item.category != 'alpin'" -%}
+    {% endif %}
+
     {%- assign default_paths = filtered_pages | map: "path" -%}
     {%- assign page_paths = site.alpin_header_pages | default: default_paths -%}
     {%- assign titles_size = filtered_pages | map: 'title' | join: '' | size -%}
+    {% if is_alpin %}
     <a class="site-title" rel="author" href="{{ "/alpin/" | relative_url }}">Alpin</a>
+    {% else %}
+    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+    {% endif %}
 
     {%- if titles_size > 0 -%}
       <nav class="site-nav">

@@ -1,5 +1,6 @@
 ---
-layout: alpin_page
+layout: page
 title: Coming soon!
+category: alpin
 ---
 
