@@ -33,7 +33,7 @@ baseurl: ""
 url: "https://danloman.com"
 
 # Build settings
-theme: minima
+# theme: minima
 
 minima:
   skin: auto
@@ -46,11 +46,10 @@ minima:
       user_url: https://linkedin.com/in/danloman
 
 plugins:
-  # - jekyll-remote-theme
+  - jekyll-remote-theme
   - jekyll-feed
-  # - jekyll-paginate
 
-# remote_theme: jekyll/minima
+remote_theme: jekyll/minima
 
 google_analytics: G-TTTHJWYRCZ
 
