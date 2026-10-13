@@ -1,0 +1,11 @@
+version: 2
+# No CI runs on pull requests here, so nothing merges itself: the weekly
+# Claude dependency routine reviews these and comments with a recommendation.
+updates:
+- package-ecosystem: bundler
+  directory: "/"
+  schedule:
+    interval: weekly
+  groups:
+    patch-and-minor:
+      update-types: [minor, patch]
